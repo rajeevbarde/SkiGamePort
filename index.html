@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   
+   <title>SnowBoader | Rajeev Barde</title>
+     <script src="jquery.min.js" type="text/javascript"></script>
+     <script src="snow_JQ.js" type="text/javascript"></script>
+     <link href="style/snow.css" rel="stylesheet" type="text/css" />
+
+     <script>
+         $(document).ready(function () {
+
+             $('.tabs a').click(function () {
+                 switch_tabs($(this));
+             });
+
+             switch_tabs($('.defaulttab'));
+
+         });
+
+         function switch_tabs(obj) {
+             $('.tab-content').hide();
+             $('.tabs a').removeClass("selected");
+             var id = obj.attr("rel");
+
+             $('#' + id).show();
+             obj.addClass("selected");
+         }
+     
+     </script>
+
+
+ </head>
+ <body>
+   <div id="gamediv">
+   <canvas id="gameCanvas" width="500" height="500">
+                        <!-- Insert fallback content here -->
+                </canvas>
+   </div>
+
+   <div id="wrapper">
+    <ul class="tabs">
+        <li><a href="#" class="defaulttab" rel="tabs1">BUTTONS</a></li>
+        <li><a href="#" rel="tabs2">SCORE</a></li>
+        
+    </ul>
+ 
+    <div class="tab-content" id="tabs1"><img src="images/start2.gif" /></div>
+    <div class="tab-content" id="tabs2"><img src="images/start3.gif" /></div>
+</div>
+
+
+
+
+ </body>
+ </html>
